@@ -1,2 +1,2 @@
-Project Pokede3
+Project Pokedex3
 DevSlope iOS course

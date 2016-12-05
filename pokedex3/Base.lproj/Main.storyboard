@@ -47,14 +47,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OOo-B9-krm">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="OOo-B9-krm" customClass="PokeCell" customModule="pokedex3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="VdN-GL-Q7B">
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="VdN-GL-Q7B">
                                                     <rect key="frame" x="0.0" y="0.0" width="105" height="80"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -79,6 +79,10 @@
                                             <constraint firstItem="VdN-GL-Q7B" firstAttribute="top" secondItem="OOo-B9-krm" secondAttribute="top" id="tei-9o-MOs"/>
                                             <constraint firstAttribute="trailing" secondItem="OGx-Vd-moQ" secondAttribute="trailing" id="tsi-MW-JT0"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="nameLbl" destination="OGx-Vd-moQ" id="Itn-Lu-jcb"/>
+                                            <outlet property="thumbImg" destination="VdN-GL-Q7B" id="nI4-4o-ekO"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

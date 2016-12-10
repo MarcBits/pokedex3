@@ -28,6 +28,34 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad()
 
         nameLbl.text = pokemon.name
+        
+        pokemon.downloadPokemonDetail {
+            
+            // Whatever we write will only be called after the network call is complete!
+            self.updateUI()
+        }
+        
+        print("Done downloading pokemon detail")
+        
+    }
+    
+    func updateUI() {
+        
+        print("Updating UI...")
+        
+        nameLbl.text = pokemon.name
+        mainImg.image = UIImage(named: "\(pokemon.pokedexId)")
+        descriptionLbl.text = pokemon.description
+        typeLbl.text = pokemon.type
+        defenseLbl.text = pokemon.defense
+        heightLbl.text = pokemon.height
+        pokedexLbl.text = "\(pokemon.pokedexId)"
+        weightLbl.text = pokemon.weight
+        attackLbl.text = pokemon.attack
+        //TODO: currentEvoImg
+        //TODO: nextEvoImg
+        //TODO: evoLbl
+        
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {

@@ -52,7 +52,7 @@ class PokemonDetailVC: UIViewController {
         pokedexLbl.text = "\(pokemon.pokedexId)"
         weightLbl.text = pokemon.weight
         attackLbl.text = pokemon.attack
-        //TODO: currentEvoImg
+        currentEvoImg.image = UIImage(named: "\(pokemon.pokedexId)")
         //TODO: nextEvoImg
         //TODO: evoLbl
         

@@ -109,7 +109,7 @@ class Pokemon {
         
         Alamofire.request(requestURL).responseJSON { (response) in
             
-            print(self._pokemonURL)             // debug
+//            print(self._pokemonURL)             // debug
 //            print(response.result.value!)       // debug
             
             let result = response.result
@@ -132,33 +132,55 @@ class Pokemon {
                 
                 //TODO: description
                 
-                //TODO: type
+                if let types = dict["types"] as? [Dictionary<String, String>], types.count > 0 {
+
+                    if let name = types[0]["name"] {
+                        self._type = name.capitalized
+                    }
+                    
+                    if types.count > 1 {
+                        
+                        for i in 1..<types.count {
+                            
+                            if let name = types[i]["name"] {
+                                
+                                self._type! += "/\(name.capitalized)"
+                            }
+                        }
+                    }
+                    
+//                    print("Type: \(self._type!)")
+                    
+                } else {
+                    
+                    self._type = ""
+                }
                 
                 if let defense = dict["defense"] as? Int {
                     
                     self._defense = "\(defense)"
                     
-                    print("Defense: \(self._defense!)")
+//                    print("Defense: \(self._defense!)")
                 }
                 
                 if let height =  dict["height"] as? String {
                     
                     self._height = height
                     
-                    print("Height: \(self._height!)")
+//                    print("Height: \(self._height!)")
                 }
                 
                 if let weight = dict["weight"] as? String {
                     
                     self._weight = weight
                     
-                    print("Weight: \(self._weight!)")
+//                    print("Weight: \(self._weight!)")
                 }
                 
                 if let attack = dict["attack"] as? Int {
                     self._attack = "\(attack)"
                     
-                    print("Attack: \(self._attack!)")
+//                    print("Attack: \(self._attack!)")
                 }
                 
                 //TODO: evolution

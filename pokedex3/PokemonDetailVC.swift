@@ -35,8 +35,6 @@ class PokemonDetailVC: UIViewController {
             self.updateUI()
         }
         
-        print("Done downloading pokemon detail")
-        
     }
     
     func updateUI() {
@@ -53,8 +51,16 @@ class PokemonDetailVC: UIViewController {
         weightLbl.text = pokemon.weight
         attackLbl.text = pokemon.attack
         currentEvoImg.image = UIImage(named: "\(pokemon.pokedexId)")
-        //TODO: nextEvoImg
-        //TODO: evoLbl
+        evoLbl.text = pokemon.nextEvolutionTxt
+        
+        if pokemon.nextEvolutionId == 0 {
+            
+            nextEvoImg.isHidden = true
+        } else {
+            
+            nextEvoImg.isHidden = false
+            nextEvoImg.image = UIImage(named: "\(pokemon.nextEvolutionId)")
+        }
         
     }
     
